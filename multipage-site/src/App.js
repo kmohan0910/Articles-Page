@@ -4,12 +4,14 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  NavLink as Link
+  NavLink as Link,
+  Redirect
 } from "react-router-dom";
 
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Article from './pages/Article';
 function App() {
   return (
     <div className="App">
@@ -29,7 +31,8 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/about" element={<About />} />
-
+          <Route exact path="/articles/:id" element={<Article/>}/>
+          <Route path="*" element={<Home/>}></Route>
         </Routes>
 
 
